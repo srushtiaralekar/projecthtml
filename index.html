@@ -31,7 +31,6 @@
       line-height: 1.6;
     }
 
-    
     nav {
       background: var(--primary);
       color: var(--white);
@@ -247,10 +246,25 @@
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       transition: transform 0.3s;
+      cursor: pointer;
     }
 
     .project-item:hover {
       transform: translateY(-10px);
+    }
+
+    .project-info {
+      display: none;
+      background: var(--white);
+      color: var(--dark);
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .project-info.active {
+      display: block;
     }
 
     /* About Section */
@@ -267,7 +281,6 @@
       margin-top: 4rem;
     }
   </style>
-  <!-- Internal CSS Ends Here -->
 
 </head>
 <body>
@@ -306,17 +319,17 @@
     <h2 class="section-title">Our Services</h2>
     <div class="service-list">
       <div class="service-item">
-        <h3>Web Development</h3>
-        <p>We create modern and responsive websites.</p>
+        <h3>Helping Businesses Grow </h3>
+        <p>To Reach Globally </p>
         <a href="#" class="btn">Learn More</a>
       </div>
       <div class="service-item">
-        <h3>Mobile Apps</h3>
-        <p>High-quality mobile app development services.</p>
+        <h3>Innovative Marketing Strategies</h3>
+        <p> To Increment the Sales </p>
         <a href="#" class="btn">Learn More</a>
       </div>
       <div class="service-item">
-        <h3>Digital Marketing</h3>
+        <h3>Designs and Branding </h3>
         <p>Grow your business online with our strategies.</p>
         <a href="#" class="btn">Learn More</a>
       </div>
@@ -344,17 +357,26 @@
     <span class="section-title">Projects</span>
     <h2>Projects We Are Proud Of</h2>
     <div class="project-list">
-      <div class="project-item">
+      <div class="project-item" onclick="toggleProjectInfo(1)">
         <h3>Project 1</h3>
         <p>Helping businesses grow with unique solutions.</p>
+        <div class="project-info" id="project-1">
+          <p> This project focuses on identifying and implementing unique solutions to help businesses in Kolhapur, Maharashtra grow. It aims to address specific challenges faced by businesses, leveraging innovative strategies and tailored approaches to achieve sustainable growth.   </p>
+        </div>
       </div>
-      <div class="project-item">
+      <div class="project-item" onclick="toggleProjectInfo(2)">
         <h3>Project 2</h3>
         <p>Innovative marketing strategies for global reach.</p>
+        <div class="project-info" id="project-2">
+          <p>Innovative marketing strategies for global reach involve tailoring your approach to resonate with diverse cultures while maintaining brand consistency. This can be achieved through a blend of localization, digital marketing, and leveraging global platforms. </p>
+        </div>
       </div>
-      <div class="project-item">
+      <div class="project-item" onclick="toggleProjectInfo(3)">
         <h3>Project 3</h3>
         <p>Creative designs and branding that stand out.</p>
+        <div class="project-info" id="project-3">
+          <p> Creative branding involves using unique designs and marketing tactics to establish a distinct and memorable brand identity. This can include things like using unique shapes from your logo throughout your branding, creating personalized content, and embracing online marketing strategies.  </p>
+        </div>
       </div>
     </div>
   </section>
@@ -378,6 +400,13 @@
   <footer>
     <p>&copy; 2025 Business Services. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleProjectInfo(projectId) {
+      var projectInfo = document.getElementById('project-' + projectId);
+      projectInfo.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
